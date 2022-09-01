@@ -33,7 +33,23 @@ doas wget https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2
 minicom -D /dev/ttyU0
 ```
 
+# ide
+
+inside [pythonsdk](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf),
+it recommends using either Thonny or rshell. Since I was pretty sure Thonny was
+gonna take a lot of work, I tried rshell; however it seemed rshell was gonna to
+work [rshell issue](https://github.com/dhylands/rshell/issues/198). I was
+looking around for [alternatives](https://bigl.es/tuesday-tooling-pico-mix/)
+and landed on ampy.
+
+```
+pip install adafruit-ampy
+ampy --port /dev/ttyU0 <command>
+```
+
 # picotool
+
+*not needed* but maybs useful later (for building with C/C++
 
 > im not sure if I already installed the build tools so I am not sure of the dependencies
 
