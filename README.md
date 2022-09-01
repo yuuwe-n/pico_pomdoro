@@ -28,6 +28,7 @@ doas wget https://micropython.org/download/rp2-pico/rp2-pico-latest.uf2
 ```
 6. disconnect/reconnect usb
 
+7. connect via minicom `pkg_add minicom`
 ```
 minicom -D /dev/ttyU0
 ```
@@ -53,6 +54,8 @@ export PICO_SDK_PATH=<path to pico sdk>
 ```
 
 ## build
+
+`pkg_add cmake`
 
 ```
 git clone https://github.com/raspberrypi/picotool.git
