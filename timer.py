@@ -1,4 +1,8 @@
 import time
+import pyb
+from machine import Pin
+
+pyb.enable_irq()
 
 HOUR = 60 * 60
 MINUTE = 60
@@ -21,12 +25,16 @@ def timer(alloted_time):
     then = time.time()
 
     elapsed = 0
+
+    elapsed_time = alloted_time + elapsed
     
-    while (10 + elapsed) >= 0:
+    while (elapsed_time) >= 0:
         then = time.time()
         elapsed = int(now - then)
+        elapsed_time = alloted_time + elapsed
+
         #print(elapsed)
-        print("\rtime: {0}".format(tft(10 + elapsed)), end=' ')
+        print("\rtime: {0}".format(tft(elapsed_time)), end=' ')
 
 
 def main():
