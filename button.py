@@ -1,8 +1,8 @@
 from machine import Pin
+import time
 
-button = Pin(1, Pin.IN)
+button = Pin(13, Pin.IN)
 
 while True:
+    time.sleep(1)
     print(button.value())
-    if button.value() == 1:
-        print(1)
